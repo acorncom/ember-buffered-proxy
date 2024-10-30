@@ -2,13 +2,13 @@ import { module, test } from 'qunit';
 import { click, fillIn, currentURL, visit } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
-module('Acceptance | application', function (hooks) {
+module('Acceptance | old', function (hooks) {
   setupApplicationTest(hooks);
 
   test('verify if changes on whole content object were applied', async function (assert) {
-    await visit('/');
+    await visit('/old');
 
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/old');
 
     // Init: Buffer's and content's property value are the same
     assert.dom('#buffer-firstname').hasText('stefan');
@@ -36,9 +36,9 @@ module('Acceptance | application', function (hooks) {
   });
 
   test('verify if partial changes were applied', async function (assert) {
-    await visit('/');
+    await visit('/old');
 
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/old');
 
     // Init: Buffer's and content's property value are the same
     assert.dom('#buffer-firstname').hasText('stefan');
@@ -77,9 +77,9 @@ module('Acceptance | application', function (hooks) {
   });
 
   test('verify if buffer is notified about discarding changes', async function (assert) {
-    await visit('/');
+    await visit('/old');
 
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/old');
 
     // Init: Buffer's and content's property value are the same
     assert.dom('#buffer-firstname').hasText('stefan');

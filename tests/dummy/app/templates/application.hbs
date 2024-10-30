@@ -1,38 +1,3 @@
 {{page-title "Dummy"}}
 
-<div id="buffer-firstname">{{this.buffer.firstName}}</div>
-<div id="user-firstname">{{this.user.firstName}}</div>
-
-<div id="buffer-email">{{this.buffer.email}}</div>
-<div id="user-email">{{this.user.email}}</div>
-
-<div id="buffer-firstname-backward">{{this.computedOnBuffer}}</div>
-
-<div id="buffer-has-changes">{{this.buffer.hasChanges}}</div>
-
-<Input id="firstname-input" @value={{this.buffer.firstName}} />
-<Input id="email-input" @value={{this.buffer.email}} />
-
-<button
-  type="button"
-  id="apply-changes"
-  {{on 'click' this.applyChanges}}
->
-  Apply changes
-</button>
-
-<button
-  type="button"
-  id="apply-partial-changes"
-  {{on 'click' (fn this.applyChanges "email")}}
->
-  Apply partial changes
-</button>
-
-<button
-  type="button"
-  id="discard-changes"
-  {{on 'click' this.discardChanges}}
->
-  Discard changes
-</button>
+{{outlet}}
